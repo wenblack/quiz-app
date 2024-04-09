@@ -1,37 +1,19 @@
-import { NavArrowRight } from "iconoir-react";
+import { Check } from "iconoir-react";
 
 interface HeaderProps {
-  actualQuestion: number;
-  totalQuestion: number;
-  isDisabled: boolean;
+  questionsRight: number;
 }
 
-export function Header({
-  actualQuestion,
-  totalQuestion,
-  isDisabled,
-}: HeaderProps) {
-  if (isDisabled) {
-    return (
-      <footer className="w-[80vw] lg:w-full items-center pt-8 flex justify-between">
-        <p className="text-gray-100 font-bold text-score">
-          {actualQuestion}/
-          <span className="text-questions">{totalQuestion}</span>
-        </p>
-        <button disabled className="hover:cursor-not-allowed ">
-          <NavArrowRight className="bg-gray-300 h-9 w-9  rounded-full text-gray-200"></NavArrowRight>
-        </button>
-      </footer>
-    );
-  }
+export function Header({ questionsRight }: HeaderProps) {
   return (
-    <footer className="w-[80vw] lg:w-full items-center pt-8 flex justify-between">
+    <footer className="w-[80vw] lg:w-full items-center pb-6 flex justify-between">
       <p className="text-gray-100 font-bold text-score">
-        {actualQuestion}/<span className="text-questions">{totalQuestion}</span>
+        👋 Quiz<span className="font-normal">Time</span>
       </p>
-      <button>
-        <NavArrowRight className="hover:bg-gray-100 bg-gray-300 h-9 w-9  rounded-full text-gray-200"></NavArrowRight>
-      </button>
+      <span className="flex h-10 w-20 border text-green-dark bg-gray-400 rounded-md gap-1 items-center justify-center border-green-dark">
+        {questionsRight}
+        <Check className="text-green-dark" />
+      </span>
     </footer>
   );
 }
