@@ -1,6 +1,6 @@
 import circleImage from "@/assets/circle.svg";
 import Image from "next/image";
-import { CheckCircleSolid } from "iconoir-react";
+import { Check, Xmark } from "iconoir-react";
 
 export interface CardProps {
   question: string;
@@ -17,7 +17,7 @@ export function Card({ question, isAnswer, click }: CardProps) {
           className="hidden md:block hover:border-green-dark w-64 h-40 justify-center hover:cursor-pointer bg-gray-400 rounded-lg border-4 border-green-light"
         >
           <div className=" w-full h-12   hover:cursor-pointer hover:opacity-70 flex flex-row p-3 justify-end ">
-            <CheckCircleSolid className="text-green-light rounded-full  bg-green-dark" />
+            <Check className="text-green-light rounded-full  bg-green-dark" />
           </div>
           <p className="h-full pb-24 text-h2 text-center text-gray-100 p-5 w-full flex items-center justify-center">
             {question}
@@ -31,7 +31,7 @@ export function Card({ question, isAnswer, click }: CardProps) {
             {question}
           </p>
           <div className="h-12 right-1 top-1  hover:cursor-pointer hover:opacity-70 flex flex-row p-3 justify-end ">
-            <CheckCircleSolid className="text-green-light rounded-full  bg-green-dark" />
+            <Check className="text-green-light rounded-full  bg-green-dark" />
           </div>
         </section>
       </>
@@ -44,7 +44,7 @@ export function Card({ question, isAnswer, click }: CardProps) {
           className="hidden md:block w-64 h-40 justify-center hover:cursor-pointer bg-gray-400 rounded-lg border-4 hover:border-red-dark border-red-light"
         >
           <div className=" w-full h-12   hover:cursor-pointer hover:opacity-70 flex flex-row p-3 justify-end ">
-            <CheckCircleSolid className="text-red-light rounded-full  bg-red-dark" />
+            <Xmark className="text-red-light rounded-full  bg-red-dark" />
           </div>
           <p className="h-full pb-24 text-h2 text-center text-gray-100 p-5 w-full flex items-center justify-center">
             {question}
@@ -58,7 +58,7 @@ export function Card({ question, isAnswer, click }: CardProps) {
             {question}
           </p>
           <div className="h-12 right-1 top-1  hover:cursor-pointer hover:opacity-70 flex flex-row p-3 justify-end ">
-            <CheckCircleSolid className="text-red-light rounded-full  bg-red-dark" />
+            <Xmark className="text-red-light rounded-full  bg-red-dark" />
           </div>
         </section>
       </>
