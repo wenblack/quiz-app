@@ -1,7 +1,7 @@
 import circleImage from "@/assets/circle.svg";
 import Image from "next/image";
 import { CheckCircleSolid } from "iconoir-react";
-interface CardProps {
+export interface CardProps {
   question: string;
   onClickFunction: () => void;
   isAnswer?: boolean;
