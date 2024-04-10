@@ -36,7 +36,8 @@ export function Card({ question, isAnswer, click }: CardProps) {
         </section>
       </>
     );
-  } else if (isAnswer === false) {
+  }
+  if (isAnswer === false) {
     return (
       <>
         <section

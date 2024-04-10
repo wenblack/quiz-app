@@ -11,9 +11,9 @@ export function Footer({
   totalQuestion,
   isDisabled,
 }: FooterProps) {
-  if (isDisabled) {
+  if (isDisabled === false) {
     return (
-      <footer className="w-[80vw] lg:w-full items-center pt-8 flex justify-between">
+      <footer className="w-[80vw] lg:w-full items-center pt-6 flex justify-between">
         <p className="text-gray-100 font-bold text-score">
           {actualQuestion}/
           <span className="text-questions">{totalQuestion}</span>
@@ -25,7 +25,7 @@ export function Footer({
     );
   }
   return (
-    <footer className="w-[80vw] lg:w-full items-center pt-8 flex justify-between">
+    <footer className="w-[80vw] lg:w-full items-center pt-6 flex justify-between">
       <p className="text-gray-100 font-bold text-score">
         {actualQuestion}/<span className="text-questions">{totalQuestion}</span>
       </p>

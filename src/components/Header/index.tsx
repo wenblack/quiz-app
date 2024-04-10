@@ -6,7 +6,7 @@ interface HeaderProps {
 
 export function Header({ questionsRight }: HeaderProps) {
   return (
-    <footer className="w-[80vw] lg:w-full items-center pb-6 flex justify-between">
+    <footer className="w-[80vw] lg:w-full  items-center pb-6 flex justify-between">
       <p className="text-gray-100 font-bold text-score">
         👋 Quiz<span className="font-normal">Time</span>
       </p>
