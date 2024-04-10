@@ -29,27 +29,29 @@ const apiResponse = {
 
 export default function Home() {
   const [isResult, setIsResult] = useState(false);
+  const [count, setCount] = useState(0);
+
   function handleSwitchResult() {
-    if (isResult === true) {
-      setIsResult(false);
-    }
-    if (isResult === false) {
-      setIsResult(true);
-    }
+    setIsResult(true);
+  }
+
+  function handleUpdateRightAnswers() {
+    setCount(count + 1);
   }
 
   return (
     <main
       className={`flex flex-col  bg-gray-600 h-screen items-center py-8 px-24 ${sora.className}`}
     >
-      <Header questionsRight={3} />
+      <Header value={count} />
       <h1 className="text-h1 h-44 pt-6 lg:h-fit w-screen px-[10vw] text-center text-gray-100 ">
         {apiResponse.question}
       </h1>
       <CardView
         functionShowResult={handleSwitchResult}
-        isResult={isResult}
         data={apiResponse.answers}
+        showResult={isResult}
+        successFunction={handleUpdateRightAnswers}
       />
       <Footer actualQuestion={4} totalQuestion={5} isDisabled={isResult} />
     </main>
