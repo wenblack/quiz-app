@@ -2,7 +2,7 @@ import { CardView } from "@/components/CardView";
 import { Sora } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const sora = Sora({ subsets: ["latin"] });
 
 const apiResponse = {
@@ -30,6 +30,12 @@ const apiResponse = {
 export default function Home() {
   const [isResult, setIsResult] = useState(false);
   const [count, setCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(5);
+
+  useEffect(() => {
+    const pageData = Array.from("12345");
+  }, [currentPage]);
 
   function handleSwitchResult() {
     setIsResult(true);
@@ -53,7 +59,11 @@ export default function Home() {
         showResult={isResult}
         successFunction={handleUpdateRightAnswers}
       />
-      <Footer actualQuestion={4} totalQuestion={5} isDisabled={isResult} />
+      <Footer
+        actualQuestion={currentPage}
+        totalQuestion={totalPages}
+        isDisabled={isResult}
+      />
     </main>
   );
 }

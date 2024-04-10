@@ -1,7 +1,6 @@
 import circleImage from "@/assets/circle.svg";
 import Image from "next/image";
 import { Check, Xmark } from "iconoir-react";
-import { useEffect, useState } from "react";
 
 export interface CardProps {
   question: string;
@@ -20,9 +19,13 @@ export function Card({
 }: CardProps) {
   async function saveAnswers() {
     if (isAnswer === true) {
-      successFunction();
+      if (successFunction) {
+        successFunction();
+      }
     }
-    onclick();
+    if (onclick) {
+      onclick();
+    }
   }
 
   if (showResult === true) {
