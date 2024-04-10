@@ -4,12 +4,14 @@ interface FooterProps {
   actualQuestion: number;
   totalQuestion: number;
   isDisabled: boolean;
+  onClick: () => void;
 }
 
 export function Footer({
   actualQuestion,
   totalQuestion,
   isDisabled,
+  onClick,
 }: FooterProps) {
   if (isDisabled === false) {
     return (
@@ -29,7 +31,7 @@ export function Footer({
       <p className="text-gray-100 font-bold text-score">
         {actualQuestion}/<span className="text-questions">{totalQuestion}</span>
       </p>
-      <button>
+      <button onClick={onClick}>
         <NavArrowRight className="hover:bg-gray-100 bg-gray-300 h-9 w-9  rounded-full text-gray-200"></NavArrowRight>
       </button>
     </footer>

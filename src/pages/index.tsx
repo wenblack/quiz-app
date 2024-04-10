@@ -33,14 +33,17 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(5);
 
-  useEffect(() => {
-    const pageData = Array.from("12345");
-  }, [currentPage]);
-
   function handleSwitchResult() {
     setIsResult(true);
   }
-
+  function nextPage() {
+    if (currentPage >= totalPages) {
+      setIsResult(true);
+    } else {
+      setCurrentPage(currentPage + 1);
+      setIsResult(false);
+    }
+  }
   function handleUpdateRightAnswers() {
     setCount(count + 1);
   }
@@ -60,6 +63,9 @@ export default function Home() {
         successFunction={handleUpdateRightAnswers}
       />
       <Footer
+        onClick={() => {
+          nextPage();
+        }}
         actualQuestion={currentPage}
         totalQuestion={totalPages}
         isDisabled={isResult}
