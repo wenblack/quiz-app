@@ -23,10 +23,22 @@ export default function Home() {
       MySwal.fire({
         title: "Parabéns !",
         icon: "success",
-        text: `Você acertou ${rightAnswers} de  ${total} perguntas`,
+        text: `Você acertou ${rightAnswers} de  ${total} perguntas
+Deseja refazer o teste?`,
         showConfirmButton: true,
-        showCancelButton: false,
+        showCancelButton: true,
         showCloseButton: true,
+        confirmButtonText: "Sim",
+        cancelButtonColor: "red",
+        confirmButtonColor: "green",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setCurrentPage(0);
+          setIsResult(false);
+          setCount(0);
+        } else if (result.isDenied) {
+          Swal.fire("OK", "", "info");
+        }
       });
     } else if (percentage > 40) {
       MySwal.fire({
@@ -35,8 +47,19 @@ export default function Home() {
         text: `Você acertou ${rightAnswers} de  ${total} perguntas. 
   Estude um pouco mais`,
         showConfirmButton: true,
-        showCancelButton: false,
+        showCancelButton: true,
         showCloseButton: true,
+        confirmButtonText: "Sim",
+        cancelButtonColor: "red",
+        confirmButtonColor: "green",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setCurrentPage(0);
+          setIsResult(false);
+          setCount(0);
+        } else if (result.isDenied) {
+          Swal.fire("OK", "", "info");
+        }
       });
     } else {
       MySwal.fire({
@@ -45,8 +68,19 @@ export default function Home() {
         text: `Você acertou ${rightAnswers} de  ${total} perguntas. 
   Deseja refazer o teste?`,
         showConfirmButton: true,
-        showCancelButton: false,
+        showCancelButton: true,
         showCloseButton: true,
+        confirmButtonText: "Sim",
+        cancelButtonColor: "red",
+        confirmButtonColor: "green",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setCurrentPage(0);
+          setIsResult(false);
+          setCount(0);
+        } else if (result.isDenied) {
+          Swal.fire("OK", "", "info");
+        }
       });
     }
   }
