@@ -99,7 +99,7 @@ Deseja refazer o teste?`,
 
   return (
     <main
-      className={`flex flex-col overflow-x-hidden bg-gray-600 min-h-screen items-center py-8 px-24 ${sora.className}`}
+      className={`flex flex-col overflow-x-hidden bg-gray-600 h-screen items-center py-8 px-24 ${sora.className}`}
     >
       <Header value={count} />
       <h1 className="text-h1 h-44 pt-6 lg:h-fit w-screen px-[10vw] text-center text-gray-100 ">
