@@ -31,7 +31,7 @@ export function CardView({
         <Card
           key={i}
           onclick={functionShowResult}
-          question={item.question}
+          text={item.text}
           isAnswer={item.isAnswer}
           showResult={showResult}
           successFunction={successFunction}
