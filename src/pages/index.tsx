@@ -98,33 +98,31 @@ Deseja refazer o teste?`,
   }
 
   return (
-    <>
-      <main
-        className={`flex flex-col  bg-gray-600 h-screen items-center py-8 px-24 ${sora.className}`}
-      >
-        <Header value={count} />
-        <h1 className="text-h1 h-44 pt-6 lg:h-fit w-screen px-[10vw] text-center text-gray-100 ">
-          {apiResponse[currentPage].question}
-        </h1>
-        <CardView
-          functionShowResult={handleSwitchResult}
-          data={apiResponse[currentPage].answers}
-          showResult={isResult}
-          successFunction={handleUpdateRightAnswers}
-        />
-        <Footer
-          onClick={() => {
-            if (totalPages === currentPage) {
-              Alert(count, totalPages + 1);
-            } else {
-              nextPage();
-            }
-          }}
-          actualQuestion={currentPage + 1}
-          totalQuestion={totalPages + 1}
-          isDisabled={isResult}
-        />
-      </main>
-    </>
+    <main
+      className={`flex flex-col overflow-x-hidden bg-gray-600 min-h-screen items-center py-8 px-24 ${sora.className}`}
+    >
+      <Header value={count} />
+      <h1 className="text-h1 h-44 pt-6 lg:h-fit w-screen px-[10vw] text-center text-gray-100 ">
+        {apiResponse[currentPage].question}
+      </h1>
+      <CardView
+        functionShowResult={handleSwitchResult}
+        data={apiResponse[currentPage].answers}
+        showResult={isResult}
+        successFunction={handleUpdateRightAnswers}
+      />
+      <Footer
+        onClick={() => {
+          if (totalPages === currentPage) {
+            Alert(count, totalPages + 1);
+          } else {
+            nextPage();
+          }
+        }}
+        actualQuestion={currentPage + 1}
+        totalQuestion={totalPages + 1}
+        isDisabled={isResult}
+      />
+    </main>
   );
 }
